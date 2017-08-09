@@ -2,8 +2,8 @@
 
 **scala-faker** is a library written in Scala which generates fake data such
 as names, addresses, and phone numbers. It is a Scala port of the famous Ruby
-library [faker]. It actually uses the same data for generating. This release of **scala-faker** is build against Scala `2.8.1`, `2.8.2`,
-`2.9.0`, `2.9.0-1`, `2.9.1`, `2.9.1-1`, `2.9.2`, `2.9.3`, `2.10` and `2.11`.
+library [faker]. It actually uses the same data for generating. 
+This release of **scala-faker** is built against Scala `2.10`, `2.11` and `2.12`.
 
 **scala-faker** only depends on [snakeyaml] for reading the original [faker]
 yaml files. The tests are written with [scalatest].
@@ -47,45 +47,31 @@ Adding scala-faker as dependency to your project is really simple. Just add the 
 
 for the latest stable release:
 
-    resolvers += "justwrote" at "http://repo.justwrote.it/releases/"
-
-    libraryDependencies += "it.justwrote" %% "scala-faker" % "0.3"
+    libraryDependencies += "it.bitbl" %% "scala-faker" % "0.4"
 
 for snapshot:
 
-    resolvers += "justwrote" at "http://repo.justwrote.it/snapshots/"
-
-    libraryDependencies += "it.justwrote" %% "scala-faker" % "0.4-SNAPSHOT"
+    libraryDependencies += "it.justwrote" %% "scala-faker" % "0.5-SNAPSHOT"
 
 #### Maven
 
 for the latest stable release:
 
-    <repository>
-        <id>justwrote</id>
-        <url>http://repo.justwrote.it/releases/</url>
-    </repository>
-    ...
     <dependency>
-        <groupId>it.justwrote</groupId>
-        <artifactId>scala-faker_2.9.1</artifactId>
-        <version>0.3</version>
+        <groupId>it.bitbl</groupId>
+        <artifactId>scala-faker_2.12.3</artifactId>
+        <version>0.4</version>
     </dependency>
 
 for snapshot:
 
-    <repository>
-        <id>justwrote</id>
-        <url>http://repo.justwrote.it/snapshots/</url>
-    </repository>
-    ...
     <dependency>
-        <groupId>it.justwrote</groupId>
-        <artifactId>scala-faker_2.9.1</artifactId>
-        <version>0.4-SNAPSHOT</version>
+        <groupId>it.bitbl</groupId>
+        <artifactId>scala-faker_2.12.3</artifactId>
+        <version>0.5-SNAPSHOT</version>
     </dependency>
 
-where `2.9.1` is your Scala version.
+where `2.12.3` is your Scala version.
 
 ### Credits
 
