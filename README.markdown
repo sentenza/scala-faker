@@ -51,7 +51,7 @@ for the latest stable release:
 
 for snapshot:
 
-    libraryDependencies += "it.justwrote" %% "scala-faker" % "0.5-SNAPSHOT"
+    libraryDependencies += "it.bitbl" %% "scala-faker" % "0.5-SNAPSHOT"
 
 #### Maven
 
