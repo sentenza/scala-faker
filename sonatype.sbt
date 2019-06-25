@@ -1,7 +1,6 @@
-sonatypeProfileName := "it.bitbl"
+sonatypeProfileName := "com.github.pjfanning"
 
-useGpg := true
-usePgpKeyHex("5981BDBD")
+//useGpg := true
 
 publishMavenStyle := true
 publishArtifact in Test := false

@@ -5,8 +5,8 @@ import sbtrelease.ReleasePlugin._
 lazy val scalaFaker = (project in file("."))
   .settings(
     name := "scala-faker",
-    organization := "it.bitbl",
-    crossScalaVersions := Seq("2.10.6", "2.11.11", "2.12.8", "2.13.0"),
+    organization := "com.github.pjfanning",
+    crossScalaVersions := Seq("2.12.8", "2.13.0"),
     scalaVersion := crossScalaVersions.value.last,
 
     sbtPlugin := false,
@@ -15,7 +15,7 @@ lazy val scalaFaker = (project in file("."))
     scalacOptions ++= Seq("-deprecation", "-Xcheckinit", "-encoding", "utf8", "-g:vars", "-unchecked", "-optimize"),
     parallelExecution := true,
     parallelExecution in Test := true,
-    homepage := Some(new java.net.URL("https://github.com/bitblitconsulting/scala-faker/")),
+    homepage := Some(new java.net.URL("https://github.com/pjfanning/scala-faker/")),
     description := "A library for generating fake data.",
 
     publishTo := Some(
@@ -29,8 +29,8 @@ lazy val scalaFaker = (project in file("."))
 
     scmInfo := Some(
       ScmInfo(
-        url("https://github.com/bitblitconsulting/scala-faker"),
-        "scm:git@github.com:bitblitconsulting/scala-faker.git"
+        url("https://github.com/pjfanning/scala-faker"),
+        "scm:git@github.com:pjfanning/scala-faker.git"
       )
     ),
 
