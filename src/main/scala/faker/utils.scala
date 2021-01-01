@@ -29,7 +29,7 @@ object Helper {
 
   def url(filename: String) = Option(getClass.getClassLoader.getResource(filename))
 
-  implicit class RandomElementInCollection[T](orig: Traversable[T]) {
+  implicit class RandomElementInCollection[T](orig: Iterable[T]) {
     def rand: T = orig.drop(Random.nextInt(orig.size)).head
   }
   implicit class RandomElementInArray[T](orig: Array[T]) {

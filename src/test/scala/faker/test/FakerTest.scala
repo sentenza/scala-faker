@@ -38,7 +38,7 @@ class FakerTest extends GeneralTest {
 class BaseTest extends GeneralTest {
   private val base = new Base {}
 
-  override protected def beforeAll() {
+  override protected def beforeAll(): Unit = {
     Faker.locale("en")
   }
 
@@ -103,7 +103,7 @@ class BaseTest extends GeneralTest {
 
 class NameTest extends GeneralTest {
 
-  override protected def beforeAll() {
+  override protected def beforeAll(): Unit = {
     Faker.locale("en")
   }
 
@@ -133,7 +133,7 @@ class NameTest extends GeneralTest {
 
 class InternetTest extends GeneralTest {
 
-  override protected def beforeAll() {
+  override protected def beforeAll(): Unit = {
     Faker.locale("en")
   }
 
@@ -178,7 +178,7 @@ class InternetTest extends GeneralTest {
 
 class GeoTest extends GeneralTest {
 
-  override protected def beforeAll() {
+  override protected def beforeAll(): Unit = {
     Faker.locale("en")
   }
 
@@ -198,7 +198,7 @@ class GeoTest extends GeneralTest {
 
 class AddressTest extends GeneralTest {
   
-  override protected def beforeAll() {
+  override protected def beforeAll(): Unit = {
     Faker.locale("en")
   }
   

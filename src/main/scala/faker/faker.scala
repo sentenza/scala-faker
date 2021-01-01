@@ -64,7 +64,7 @@ object Faker {
 
   private[this] def filename(locale: String) = locale + ".yml"
 
-  def locale(value: String) {
+  def locale(value: String): Unit = {
     synchronized {
       data = FakeData(value)
     }
@@ -119,6 +119,7 @@ trait Base {
             if(etc != null)
               text ++= etc
             text.toString()
+          case _ =>
         }
     }.mkString("")
 }
@@ -215,7 +216,7 @@ object Company extends Base {
   private def name2 = List(Name.last_name, Name.last_name).mkString("-")
   private def name3 = String.format("%s, %s and %s", Name.last_name, Name.last_name, Name.last_name)
 
-  def name: String = List(name1 _, name2 _, name3 _).rand()
+  def name: String = List(() => name1, () => name2, () => name3).rand()
   def suffix: String = fetch("company.suffix")
 }
 
@@ -255,6 +256,6 @@ object Geo extends Base {
   def coordsInArea(range: CoordsRange): CoordsFun = new CoordsFun {
     import range._
 
-    def apply() = (Random.nextDouble * latRange + minLat, Random.nextDouble * lngRange + minLng)
+    def apply() = (Random.nextDouble() * latRange + minLat, Random.nextDouble() * lngRange + minLng)
   }
 }
