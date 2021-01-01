@@ -1,11 +1,12 @@
 package faker.test
 
 import faker._
-import org.scalatest.Matchers
-import org.scalatest.{BeforeAndAfterAll, WordSpec}
+import org.scalatest.BeforeAndAfterAll
+import org.scalatest.matchers.should.Matchers
+import org.scalatest.wordspec.AnyWordSpec
 
 trait GeneralTest extends
-  WordSpec with
+  AnyWordSpec with
   Matchers with
   BeforeAndAfterAll
 
