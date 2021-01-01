@@ -46,10 +46,10 @@ object Faker {
 
     private[this] def loadFile(filename: String) = url(filename).map(Source.fromURL(_, "UTF-8"))
 
-    private[this] def load(yaml: Yaml, locale: String) =
+    private[this] def load(yaml: Yaml, locale: String) = {
       loadFile(filename(locale))
-        .map(x => yaml.load(x.mkString))
-        .map(_.asInstanceOf[java.util.Map[String, AnyRef]])
+        .map(x => yaml.load(x.mkString).asInstanceOf[java.util.Map[String, AnyRef]])
+    }
 
     private def init(language: String, locale: Option[String]) = {
       val yaml = new Yaml
