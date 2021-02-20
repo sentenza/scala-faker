@@ -6,7 +6,7 @@ lazy val scalaFaker = (project in file("."))
   .settings(
     name := "scala-faker",
     organization := "com.github.pjfanning",
-    crossScalaVersions := Seq("2.12.12", "2.13.4", "3.0.0-M3"),
+    crossScalaVersions := Seq("2.12.12", "2.13.4", "3.0.0-RC1"),
     scalaVersion := "2.13.4",
 
     sbtPlugin := false,
@@ -43,7 +43,7 @@ lazy val scalaFaker = (project in file("."))
 
     libraryDependencies ++= Seq(
       "org.yaml" % "snakeyaml" % "1.27",
-      "org.scalatest" %% "scalatest" % "3.2.3" % Test
+      "org.scalatest" %% "scalatest" % "3.2.5" % Test
     ),
 
     // enable publishing the main API jar
