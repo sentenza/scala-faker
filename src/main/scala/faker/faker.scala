@@ -89,13 +89,16 @@ trait Base {
   def bothify(s: String): String =
     letterify(numerify(s))
 
-  def fetch[T](key: String): T =
-    Faker.get("*.faker." + key).map(_.rand).fold(null.asInstanceOf[T])(_.asInstanceOf[T])
+  def fetch[T](key: String): T = {
+    val fetched = Faker.get("*.faker." + key)
+    fetched.map(_.rand).fold(null.asInstanceOf[T])(_.asInstanceOf[T])
+  }
 
   // Load formatted strings from the locale, "parsing" them into method calls that can be used to generate a
   // formatted translation: e.g., "#{first_name} #{last_name}".
-  def parse(key: String): String =
-    parsePattern.findAllIn(fetch[String](key)).matchData.map {
+  def parse(key: String): String = {
+    val fetched = fetch[String](key)
+    parsePattern.findAllIn(fetched).matchData.map {
       thisMatch =>
         thisMatch.subgroups match {
           case prefix :: kls :: meth :: etc :: _ =>
@@ -122,6 +125,7 @@ trait Base {
           case _ =>
         }
     }.mkString("")
+  }
 }
 
 object Address extends Base {
