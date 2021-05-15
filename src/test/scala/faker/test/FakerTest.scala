@@ -5,10 +5,7 @@ import org.scalatest.BeforeAndAfterAll
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpec
 
-trait GeneralTest extends
-  AnyWordSpec with
-  Matchers with
-  BeforeAndAfterAll
+trait GeneralTest extends AnyWordSpec with Matchers with BeforeAndAfterAll
 
 class FakerTest extends GeneralTest {
 
