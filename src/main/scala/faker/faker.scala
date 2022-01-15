@@ -1,12 +1,11 @@
 package faker
 
+import faker.Helper._
 import org.yaml.snakeyaml.Yaml
-import util.Random
-import scala.collection.JavaConverters._
-import java.util.ArrayList
-import io.Source
 
-import Helper._
+import scala.io.Source
+import scala.jdk.CollectionConverters._
+import scala.util.Random
 
 object Faker {
 

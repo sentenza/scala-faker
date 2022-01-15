@@ -1,21 +1,25 @@
 import sbt._
 import Keys._
-import sbtrelease.ReleasePlugin._
+
+ThisBuild / scalaVersion := "2.13.8"
+ThisBuild / crossScalaVersions := Seq("2.12.15", "2.13.8", "3.0.0")
+ThisBuild / githubWorkflowJavaVersions := Seq(JavaSpec.temurin("11.0.13"))
+ThisBuild / githubWorkflowTargetTags ++= Seq("v*")
+ThisBuild / githubWorkflowPublishTargetBranches:= Seq()
 
 lazy val scalaFaker = (project in file("."))
   .settings(
     name := "scala-faker",
-    organization := "com.github.pjfanning",
-    crossScalaVersions := Seq("2.12.12", "2.13.5", "3.0.0"),
-    scalaVersion := "2.13.5",
+    organization := "com.github.sentenza",
+    crossScalaVersions := Seq("2.12.15", "2.13.8", "3.0.0"),
+    scalaVersion := "2.13.8",
 
     sbtPlugin := false,
 
-    publishArtifact in (Compile, packageDoc) := false,
     scalacOptions ++= Seq("-deprecation", "-Xcheckinit", "-encoding", "utf8", "-g:vars", "-unchecked", "-optimize"),
-    parallelExecution := true,
-    parallelExecution in Test := true,
-    homepage := Some(new java.net.URL("https://github.com/pjfanning/scala-faker/")),
+    Compile / parallelExecution := true,
+    Test / parallelExecution := true,
+    homepage := Some(new java.net.URL("https://github.com/sentenza/scala-faker/")),
     description := "A library for generating fake data.",
 
     publishTo := Some(
@@ -29,24 +33,28 @@ lazy val scalaFaker = (project in file("."))
 
     scmInfo := Some(
       ScmInfo(
-        url("https://github.com/pjfanning/scala-faker"),
-        "scm:git@github.com:pjfanning/scala-faker.git"
+        url("https://github.com/sentenza/scala-faker"),
+        "scm:git@github.com:sentenza/scala-faker.git"
       )
     ),
 
     developers := List(
       Developer(id="j1mr10rd4n", name="Jim Riordan", email="jim@j1mr10rd4n.info", url=url("https://github.com/j1mr10rd4n")),
-      Developer(id="justwrote", name="Just Wrote", email="unknown", url=url("https://github.com/justwrote"))
+      Developer(id="justwrote", name="Just Wrote", email="unknown", url=url("https://github.com/justwrote")),
+      Developer(id="sentenza", name="Alfredo Torre", email="sentenza@github.com", url=url("https://github.com/sentenza"))
     ),
 
     initialCommands := "import faker._",
 
     libraryDependencies ++= Seq(
-      "org.yaml" % "snakeyaml" % "1.28",
-      "org.scalatest" %% "scalatest" % "3.2.9" % Test
+      "org.scala-lang.modules" %% "scala-collection-compat" % "2.6.0",
+      "org.yaml" % "snakeyaml" % "1.30",
+      "org.scalatest" %% "scalatest" % "3.2.10" % Test
     ),
 
     // enable publishing the main API jar
-    publishArtifact in (Compile, packageDoc) := true
+    Compile / publishArtifact := true
   )
+
+Global / onChangedBuildSource := ReloadOnSourceChanges
 
