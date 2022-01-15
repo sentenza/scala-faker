@@ -2,7 +2,7 @@ import sbt._
 import Keys._
 
 ThisBuild / scalaVersion := "2.13.8"
-ThisBuild / crossScalaVersions := Seq("2.12.15", "2.13.8", "3.0.0")
+ThisBuild / crossScalaVersions := Seq("2.12.15", "2.13.8", "3.1.0")
 ThisBuild / githubWorkflowJavaVersions := Seq(JavaSpec.temurin("11.0.13"))
 ThisBuild / githubWorkflowTargetTags ++= Seq("v*")
 ThisBuild / githubWorkflowPublishTargetBranches:= Seq()
@@ -11,7 +11,7 @@ lazy val scalaFaker = (project in file("."))
   .settings(
     name := "scala-faker",
     organization := "com.github.sentenza",
-    crossScalaVersions := Seq("2.12.15", "2.13.8", "3.0.0"),
+    crossScalaVersions := Seq("2.12.15", "2.13.8", "3.1.0"),
     scalaVersion := "2.13.8",
 
     sbtPlugin := false,
