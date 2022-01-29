@@ -16,7 +16,7 @@ class FakerTest extends GeneralTest {
       list should be (Some(List("North", "East", "West", "South", "New", "Lake", "Port")))
     }
 
-    "return german company suffixes" in {
+    "return German company suffixes" in {
       Faker.locale("de")
       val list = Faker.get("*.faker.company.suffix")
       list should be (Some(List("GmbH", "AG", "Gruppe")))
@@ -138,37 +138,38 @@ class InternetTest extends GeneralTest {
   "Internet" should {
     "generate a valid email address" in {
       val email = Internet.email
-      email should not be (null)
+      email should not be null
       email should fullyMatch regex """^[a-z0-9._%\-+]+@(?:[a-z0-9\-]+\.)+[a-z]{2,4}$"""
     }
     "generate a valid free email address" in {
       val email = Internet.free_email
-      email should not be (null)
+      email should not be null
       email should fullyMatch regex """.+@(gmail|hotmail|yahoo)\.com"""
     }
     "generate a username" in {
       val name = Internet.user_name
-      name should not be (null)
+      name should not be null
       name should fullyMatch regex """[a-z]+((_|\.)[a-z]+)?"""
     }
     "generate a valid username for a given name" in {
       val name = Internet.user_name("bo peep")
-      name should not be (null)
+      name should not be null
       name should fullyMatch regex """(bo(_|\.)?peep|peep(_|\.)?bo)"""
     }
     "generate a domain name" in {
       val domainName = Internet.domain_name
-      domainName should not be (null)
+      domainName should not be null
       domainName should fullyMatch regex """\w+\.\w+"""
     }
     "generate a domain world" in {
       val domainWord = Internet.domain_word
-      domainWord should not be (null)
+      domainWord should not be null
       domainWord should fullyMatch regex """^\w+$"""
     }
-    "generate a domains suffix" in {
+    "generate a domain suffix" in {
       val domainSuffix = Internet.domain_suffix
-      domainSuffix should not be (null)
+      println(s"Domain suffix: $domainSuffix")
+      domainSuffix should not be null
       domainSuffix should fullyMatch regex """^\w+(\.\w+)?"""
     }
     "generate an ipv4 address" in {
@@ -217,19 +218,19 @@ class AddressTest extends GeneralTest {
   "Address" should {
     "return a valid city" in {
       val data: String = Address.city
-      data should not be (null)
+      data should not be null
       data should fullyMatch regex """([A-Za-z'\.]+ ?){1,3}"""
     }   
 
     "return a valid street name" in {
       val data: String = Address.street_name
-      data should not be (null)
+      data should not be null
       data should fullyMatch regex """([A-Za-z'\.]+ ?){1,3}"""
     }   
 
     "return a valid street address" in {
       val data: String = Address.street_address(true)
-      data should not be (null)
+      data should not be null
       data should fullyMatch regex """[0-9]+ ([A-Za-z'\.]+ ?){1,3} [A-Za-z'\.]+ [0-9]+"""
     }   
   }

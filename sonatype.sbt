@@ -1,8 +1,8 @@
-sonatypeProfileName := "com.github.pjfanning"
+sonatypeProfileName := "com.github.sentenza"
 
 //useGpg := true
 
 publishMavenStyle := true
-publishArtifact in Test := false
+Test / publishArtifact := false
 pomIncludeRepository := (_ => false)
 
