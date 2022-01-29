@@ -11,13 +11,13 @@ lazy val scalaFaker = (project in file("."))
   .settings(
     name := "scala-faker",
     organization := "com.github.sentenza",
-    crossScalaVersions := Seq("2.12.15", "2.13.8", "3.1.0"),
+    crossScalaVersions := Seq("2.12.15", "2.13.8", "3.1.1"),
     scalaVersion := "2.13.8",
 
     sbtPlugin := false,
 
     scalacOptions ++= Seq("-deprecation", "-Xcheckinit", "-encoding", "utf8", "-g:vars", "-unchecked", "-optimize"),
-    Compile / parallelExecution := true,
+    // Compile / parallelExecution := true,
     Test / parallelExecution := true,
     homepage := Some(new java.net.URL("https://github.com/sentenza/scala-faker/")),
     description := "A library for generating fake data.",
