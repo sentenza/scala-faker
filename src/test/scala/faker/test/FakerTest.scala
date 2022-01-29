@@ -166,8 +166,9 @@ class InternetTest extends GeneralTest {
       domainWord should not be null
       domainWord should fullyMatch regex """^\w+$"""
     }
-    "generate a domains suffix" in {
+    "generate a domain suffix" in {
       val domainSuffix = Internet.domain_suffix
+      println(s"Domain suffix: $domainSuffix")
       domainSuffix should not be null
       domainSuffix should fullyMatch regex """^\w+(\.\w+)?"""
     }

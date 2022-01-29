@@ -2,7 +2,7 @@ import sbt._
 import Keys._
 
 ThisBuild / scalaVersion := "2.13.8"
-ThisBuild / crossScalaVersions := Seq("2.12.15", "2.13.8", "3.1.0")
+ThisBuild / crossScalaVersions := Seq("2.12.15", "2.13.8", "3.1.1")
 ThisBuild / githubWorkflowJavaVersions := Seq(JavaSpec.temurin("11.0.13"))
 ThisBuild / githubWorkflowTargetTags ++= Seq("v*")
 ThisBuild / githubWorkflowPublishTargetBranches:= Seq()
@@ -49,7 +49,7 @@ lazy val scalaFaker = (project in file("."))
     libraryDependencies ++= Seq(
       "org.scala-lang.modules" %% "scala-collection-compat" % "2.6.0",
       "org.yaml" % "snakeyaml" % "1.30",
-      "org.scalatest" %% "scalatest" % "3.2.10" % Test
+      "org.scalatest" %% "scalatest" % "3.2.11" % Test
     ),
 
     // enable publishing the main API jar
