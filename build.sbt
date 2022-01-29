@@ -16,7 +16,7 @@ lazy val scalaFaker = (project in file("."))
 
     sbtPlugin := false,
 
-    scalacOptions ++= Seq("-deprecation", "-Xcheckinit", "-encoding", "utf8", "-g:vars", "-unchecked", "-optimize"),
+    scalacOptions ++= Seq("-deprecation", "-Xcheckinit", "-encoding", "utf8", "-g:vars", "-unchecked", "-opt:l:default"),
     //Compile / parallelExecution := true,
     Test / parallelExecution := true,
     homepage := Some(new java.net.URL("https://github.com/sentenza/scala-faker/")),
